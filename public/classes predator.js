@@ -1,37 +1,9 @@
-class Gishatich {
-    constructor(x, y, index) {
-        this.x = x;
-        this.y = y;
-        this.index = index;
+class Gishatich extends Creature {
+    constructor(x, y, index,directions) {
+        super(x,y,index,directions)
         this.energy = Math.round(Math.random() * 16);
         this.speed = 24;
         this.multiply = Math.round(Math.random() * 16);
-        matrix[this.y][this.x] = this.index;
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ];
-
-    }
-    yntrelVandak(ch) {
-        this.stanalNorKordinatner();
-        var found = [];
-        for (var i in this.directions) {
-            var x = this.directions[i][0];
-            var y = this.directions[i][1];
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[y][x] == ch) {
-                    found.push(this.directions[i]);
-                }
-            }
-        }
-        return found;
     }
     stanalNorKordinatner() {
         this.directions = [
@@ -44,6 +16,11 @@ class Gishatich {
             [this.x, this.y + 1],
             [this.x + 1, this.y + 1]
         ];
+    }
+    yntrelVandak(Character) {
+        this.stanalNorKordinatner();
+       return super.yntrelVandak(Character);
+
     }
 
     sharjvel() {

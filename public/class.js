@@ -1,8 +1,10 @@
-Class Creature{
+class Creature{
     constructor(x,y,index){
         this.x = x;
         this.y = y;
         this.index = index;
+        this.multiply = Math.round(Math.random() * 8);
+        this.speed = 8;
         this.directions = [
             [this.x - 1, this.y - 1],
             [this.x, this.y - 1],
@@ -13,6 +15,7 @@ Class Creature{
             [this.x, this.y + 1],
             [this.x + 1, this.y + 1]
         ];
+    }
 
     yntrelVandak(ch) {
         var found = [];
@@ -26,8 +29,5 @@ Class Creature{
             }
         }
         return found;
-    }
-
-
     }
 }

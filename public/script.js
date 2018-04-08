@@ -78,6 +78,7 @@ function draw() {
         xotakerArr[i].mahanal();
     }
 
+
     for(var i in gishatichArr) {
         gishatichArr[i].bazmanal();
         gishatichArr[i].utel();
