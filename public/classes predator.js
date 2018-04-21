@@ -1,6 +1,6 @@
 class Gishatich extends Creature {
-    constructor(x, y, index,directions) {
-        super(x,y,index,directions)
+    constructor(x, y, index, directions) {
+        super(x, y, index, directions)
         this.energy = Math.round(Math.random() * 16);
         this.speed = 24;
         this.multiply = Math.round(Math.random() * 16);
@@ -19,7 +19,7 @@ class Gishatich extends Creature {
     }
     yntrelVandak(Character) {
         this.stanalNorKordinatner();
-       return super.yntrelVandak(Character);
+        return super.yntrelVandak(Character);
 
     }
 
@@ -38,7 +38,7 @@ class Gishatich extends Creature {
         this.energy--;
         var vand = random(this.yntrelVandak(2));
         if (vand && this.multiply >= this.speed / 2) {
-            this.energy += this.speed/2;
+            this.energy += this.speed / 2;
             matrix[this.y][this.x] = 0;
             this.x = vand[0]; this.y = vand[1];
             matrix[this.y][this.x] = 3;

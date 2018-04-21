@@ -1,5 +1,5 @@
-class Creature{
-    constructor(x,y,index){
+class Creature {
+    constructor(x, y, index) {
         this.x = x;
         this.y = y;
         this.index = index;

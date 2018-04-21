@@ -1,9 +1,9 @@
 class Xotaker extends Creature {
-    constructor(x, y, index,directions) {
-        super(x,y,index,directions);
-        this.energy = Math.round(Math.random() * 6);
-        this.multiply = Math.round(Math.random() * 6);
-        this.speed = 6;
+    constructor(x, y, index, directions) {
+        super(x, y, index, directions);
+        this.energy = Math.round(Math.random() * 8);
+        this.multiply = Math.round(Math.random() * 8);
+        this.speed = 14;
     }
     stanalNorKordinatner() {
         this.directions = [
@@ -19,7 +19,7 @@ class Xotaker extends Creature {
     }
     yntrelVandak(Character) {
         this.stanalNorKordinatner();
-       return super.yntrelVandak(Character);
+        return super.yntrelVandak(Character);
 
     }
 

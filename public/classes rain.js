@@ -19,17 +19,17 @@ class Anjrev extends Creature {
     }
     yntrelVandak(Character) {
         this.stanalNorKordinatner();
-       return super.yntrelVandak(Character);
+        return super.yntrelVandak(Character);
 
     }
 
     sharjvel() {
         var vand = random(this.yntrelVandak(0));
-        if (vand && this.multiply >= this.speed / 4) {
+        if (vand && this.multiply >= this.speed / 2) {
             this.energy--;
             matrix[this.y][this.x] = 0;
             this.x = vand[0]; this.y = vand[1];
-            matrix[this.y][this.x] = 3;
+            matrix[this.y][this.x] = 4;
         }
     }
 
@@ -37,8 +37,8 @@ class Anjrev extends Creature {
         this.energy--;
         this.multiply++;
         var vand = random(this.yntrelVandak(2));
-        if (vand && this.multiply >= this.speed / 2) {
-            this.energy += this.speed/2;
+        if (vand && this.multiply >= this.speed / 4) {
+            this.energy += this.speed / 2;
             matrix[this.y][this.x] = 0;
             this.x = vand[0]; this.y = vand[1];
             matrix[this.y][this.x] = 3;
@@ -55,13 +55,13 @@ class Anjrev extends Creature {
         var vand = random(this.yntrelVandak(1));
         if (vand && this.energy >= this.speed) {
             this.energy = 1;
-            var newAnjrev = new Anjrev(vand[0], vand[1], 3);
+            var newAnjrev = new Anjrev(vand[0], vand[1], 4);
             AnjrevArr.push(newAnjrev);
         }
     }
 
     mahanal() {
-        if (this.energy <= -(this.speed / 2)) {
+        if (this.energy <= -(this.speed / 4)) {
             matrix[this.y][this.x] = 0;
             for (var i in AnjrevArr) {
                 if (AnjrevArr[i].x == this.x && AnjrevArr[i].y == this.y) {
