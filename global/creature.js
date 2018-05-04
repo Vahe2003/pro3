@@ -1,4 +1,4 @@
-class Creature {
+creature.exports = class Creature {
     constructor(x, y, index) {
         this.x = x;
         this.y = y;

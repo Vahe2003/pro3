@@ -1,5 +1,5 @@
 function genMatrix(w, h) {
-    var matrix = [];
+    matrix = [];
     for (var y = 0; y < h; y++) {
         matrix[y] = [];
         for (var x = 0; x < w; x++) {
@@ -15,7 +15,7 @@ function genMatrix(w, h) {
     return matrix;
 }
 
-var matrix;
+global.matrix;
 var w = 30;
 var h = 30;
 var side = 24;
@@ -44,7 +44,7 @@ function setup() {
     }
 }
 
-function draw() {
+/*function draw() {
     background("#acacac");
     for (var y in matrix) {
         for (var x in matrix[y]) {
@@ -89,4 +89,28 @@ function draw() {
         AnjrevArr[i].mahanal();
     }
 
+}*/
+
+
+
+var socket = io();
+
+function setup() {
+    createCanvas(1000, 1000);
+    background(200);
+}
+
+function mouseDragged(e) {
+    console.log([mouseX, mouseY]);
+    socket.emit("nor kordinater", [mouseX, mouseY]);
+}
+
+function main() {
+    socket = io.connect('http://localhost:3000');
+    socket.on("staci kordinatnnery", gcel);
+
+    function gcel(data) {
+        fill('red');
+        ellipse(data[0], data[1], 15, 15);
+    }
 }

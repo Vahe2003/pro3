@@ -1,3 +1,4 @@
+grass.exports =
 class Grass extends Creature {
 
     mul() {

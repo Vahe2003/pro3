@@ -1,9 +1,10 @@
-class Xotaker extends Creature {
+predator.exports =
+class Gishatich extends Creature {
     constructor(x, y, index, directions) {
-        super(x, y, index, directions);
-        this.energy = Math.round(Math.random() * 8);
-        this.multiply = Math.round(Math.random() * 8);
-        this.speed = 14;
+        super(x, y, index, directions)
+        this.energy = Math.round(Math.random() * 16);
+        this.speed = 24;
+        this.multiply = Math.round(Math.random() * 16);
     }
     stanalNorKordinatner() {
         this.directions = [
@@ -25,50 +26,47 @@ class Xotaker extends Creature {
 
     sharjvel() {
         var vand = random(this.yntrelVandak(0));
-        if (vand && this.multiply >= this.speed / 4) {
+        if (vand && this.multiply >= this.speed / 2) {
             this.energy--;
             matrix[this.y][this.x] = 0;
             this.x = vand[0]; this.y = vand[1];
-            matrix[this.y][this.x] = 2;
-            this.multiply = 0;
+            matrix[this.y][this.x] = 4;
+            this.multiply = 0
         }
     }
 
     utel() {
         this.energy--;
-        this.multiply++;
-        var vand = random(this.yntrelVandak(1));
+        var vand = random(this.yntrelVandak(2));
         if (vand && this.multiply >= this.speed / 2) {
-            this.energy += this.speed;
+            this.energy += this.speed / 2;
             matrix[this.y][this.x] = 0;
             this.x = vand[0]; this.y = vand[1];
-            matrix[this.y][this.x] = 2;
-            for (var i in grassArr) {
-                if (grassArr[i].x == this.x && grassArr[i].y == this.y) {
-                    grassArr.splice(i, 1);
-                    break;
+            matrix[this.y][this.x] = 3;
+            for (var i in xotakerArr) {
+                if (xotakerArr[i].x == this.x && xotakerArr[i].y == this.y) {
+                    xotakerArr.splice(i, 1);
                 }
             }
         }
         else this.sharjvel();
-
     }
 
     bazmanal() {
         var vand = random(this.yntrelVandak(0));
         if (vand && this.energy >= this.speed) {
             this.energy = 1;
-            var newxotaker = new Xotaker(vand[0], vand[1], 2);
-            xotakerArr.push(newxotaker);
+            var newgishatich = new Gishatich(vand[0], vand[1], 1);
+            gishatichArr.push(newgishatich);
         }
     }
 
     mahanal() {
         if (this.energy <= -(this.speed / 2)) {
             matrix[this.y][this.x] = 0;
-            for (var i in xotakerArr) {
-                if (xotakerArr[i].x == this.x && xotakerArr[i].y == this.y) {
-                    xotakerArr.splice(i, 1);
+            for (var i in gishatichArr) {
+                if (gishatichArr[i].x == this.x && gishatichArr[i].y == this.y) {
+                    gishatichArr.splice(i, 1);
                 }
             }
         }
