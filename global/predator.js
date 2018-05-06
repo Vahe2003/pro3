@@ -1,4 +1,4 @@
-predator.exports =
+module.exports =
 class Gishatich extends Creature {
     constructor(x, y, index, directions) {
         super(x, y, index, directions)

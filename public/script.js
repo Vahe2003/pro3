@@ -15,7 +15,7 @@ function genMatrix(w, h) {
     return matrix;
 }
 
-global.matrix;
+var matrix;
 var w = 30;
 var h = 30;
 var side = 24;
@@ -44,73 +44,5 @@ function setup() {
     }
 }
 
-/*function draw() {
-    background("#acacac");
-    for (var y in matrix) {
-        for (var x in matrix[y]) {
-            if (matrix[y][x] == 0) {
-                fill("#acacac");
-            }
-            else if (matrix[y][x] == 1) {
-                fill("green");
-            }
-            else if (matrix[y][x] == 2) {
-                fill("yellow");
-            }
-            else if (matrix[y][x] == 3) {
-                fill("red");
-            }
-            else if (matrix[y][x] == 4) {
-                fill("blue");
-            }
-            rect(x * side, y * side, side, side);
-        }
-    }
-
-    for (var i in grassArr) {
-        grassArr[i].mul();
-    }
-
-    for (var i in xotakerArr) {
-        xotakerArr[i].bazmanal();
-        xotakerArr[i].utel();
-        xotakerArr[i].mahanal();
-    }
 
 
-    for (var i in gishatichArr) {
-        gishatichArr[i].bazmanal();
-        gishatichArr[i].utel();
-        gishatichArr[i].mahanal();
-    }
-    for (var i in AnjrevArr) {
-        AnjrevArr[i].bazmanal();
-        AnjrevArr[i].utel();
-        AnjrevArr[i].mahanal();
-    }
-
-}*/
-
-
-
-var socket = io();
-
-function setup() {
-    createCanvas(1000, 1000);
-    background(200);
-}
-
-function mouseDragged(e) {
-    console.log([mouseX, mouseY]);
-    socket.emit("nor kordinater", [mouseX, mouseY]);
-}
-
-function main() {
-    socket = io.connect('http://localhost:3000');
-    socket.on("staci kordinatnnery", gcel);
-
-    function gcel(data) {
-        fill('red');
-        ellipse(data[0], data[1], 15, 15);
-    }
-}

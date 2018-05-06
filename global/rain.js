@@ -1,4 +1,4 @@
-rain.exports =
+module.exports =
 class Anjrev extends Creature {
     constructor(x, y, index, directions) {
         super(x, y, index, directions)

@@ -1,4 +1,4 @@
-grass.exports =
+module.exports = 
 class Grass extends Creature {
 
     mul() {
