@@ -1,4 +1,4 @@
-global.Creature = require("./global/creature.js");
+global.Creature = require("./global/creature.js")
 global.Grass = require("./global/grass.js");
 global.Xotaker = require("./global/eatgrass.js");
 global.Gishatich = require("./global/predator.js");
